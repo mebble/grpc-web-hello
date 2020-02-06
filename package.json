@@ -1,0 +1,25 @@
+{
+  "name": "grpcweb-hello",
+  "version": "1.0.0",
+  "description": "Learning grpc-web with react and node",
+  "private": true,
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "load:config": "env-cmd -f .config",
+    "load:env": "env-cmd -f .env",
+    "clean:proto": "npm run load:config ./scripts/protoclean.sh",
+    "dev:client": "cd client && npm start",
+    "build:proto": "npm run load:config ./scripts/protogen.sh",
+    "build:client": "cd client && npm run build && mv build ../build"
+  },
+  "author": "Neil Leeson Syiemlieh",
+  "license": "ISC",
+  "devDependencies": {
+    "@grpc/proto-loader": "^0.5.3",
+    "env-cmd": "^10.0.1",
+    "google-protobuf": "^3.11.3",
+    "grpc": "^1.24.2",
+    "grpc-web": "^1.0.7"
+  },
+  "dependencies": {}
+}
