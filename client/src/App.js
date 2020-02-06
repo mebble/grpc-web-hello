@@ -1,6 +1,9 @@
 const React = require('react');
+const { useState } = require('react');
 
 require('./App.css');
+
+const SearchBar = require('./components/SearchBar');
 
 const { HelloRequest, HelloReply } = require('./.proto-generated/helloworld_pb');
 const { GreeterClient } = require('./.proto-generated/helloworld_grpc_web_pb');
@@ -18,7 +21,7 @@ const makeRequest = (name) => {
 const App = () => {
   return (
     <div>
-      <button onClick={() => makeRequest('World!!!')}>GO!</button>
+      <SearchBar onSubmit={value => makeRequest(value)} />
     </div>
   );
 };

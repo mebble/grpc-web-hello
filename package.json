@@ -8,9 +8,12 @@
     "load:config": "env-cmd -f .config",
     "load:env": "env-cmd -f .env",
     "clean:proto": "npm run load:config ./scripts/protoclean.sh",
+    "clean:client": "rm -rf build/",
     "dev:client": "cd client && npm start",
+    "dev:server": "nodemon server.js",
     "build:proto": "npm run load:config ./scripts/protogen.sh",
-    "build:client": "cd client && npm run build && mv build ../build"
+    "build:client": "npm run clean:client && cd client && npm run build && mv build ../build",
+    "start:production": "npm run build:proto && npm run build:client && node server.js"
   },
   "author": "Neil Leeson Syiemlieh",
   "license": "ISC",
@@ -19,7 +22,8 @@
     "env-cmd": "^10.0.1",
     "google-protobuf": "^3.11.3",
     "grpc": "^1.24.2",
-    "grpc-web": "^1.0.7"
+    "grpc-web": "^1.0.7",
+    "nodemon": "^2.0.2"
   },
   "dependencies": {}
 }

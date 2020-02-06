@@ -2,6 +2,7 @@ const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
 
 const PROTO_PATH = __dirname + '/proto/helloworld.proto';
+const PORT = 9090;
 
 const packageDefinition = protoLoader.loadSync(PROTO_PATH, {
     keepCase: true,
@@ -21,6 +22,7 @@ if (require.main === module) {
             callback(null, { message });
         }
     });
-    server.bind('0.0.0.0:9090', grpc.ServerCredentials.createInsecure());
+    server.bind(`0.0.0.0:${PORT}`, grpc.ServerCredentials.createInsecure());
     server.start();
+    console.log(`Server listening at port ${PORT}`);
 }
