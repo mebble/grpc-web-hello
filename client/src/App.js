@@ -1,5 +1,4 @@
 const React = require('react');
-const { useState } = require('react');
 
 require('./App.css');
 

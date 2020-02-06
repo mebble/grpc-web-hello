@@ -1,0 +1,31 @@
+.SearchBar {
+    padding: .5rem;
+
+    /* DEBUG */
+    /* border: solid 1px red; */
+    /* background-color: orange; */
+}
+
+.SearchBar form {
+    display: flex;
+    justify-content: center;
+
+    /* DEBUG */
+    /* border: solid 1px blue; */
+    /* background-color: yellow; */
+}
+
+.SearchBar form * {
+    margin: 0 .5rem;
+
+    /* DEBUG */
+    /* border: solid 1px black; */
+}
+
+.SearchBar button {
+    padding: .5rem 1rem;
+    border: none;
+    border-radius: 5%;
+    color: white;
+    background-color: #28a744;
+}
