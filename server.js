@@ -24,5 +24,5 @@ if (require.main === module) {
     });
     server.bind(`0.0.0.0:${PORT}`, grpc.ServerCredentials.createInsecure());
     server.start();
-    console.log(`Server listening at port ${PORT}`);
+    console.log(`Node gRPC server listening at port ${PORT}`);
 }
