@@ -4,16 +4,19 @@
   "description": "Learning grpc-web with react and node",
   "private": true,
   "scripts": {
+    "install:dependencies": "npm install && cd client && npm install",
+    "clean:dependencies": "rm -rf node_modules && cd client && rm -rf node_modules",
     "test": "echo \"Error: no test specified\" && exit 1",
     "load:config": "env-cmd -f .config",
     "load:env": "env-cmd -f .env",
     "clean:proto": "npm run load:config ./scripts/protoclean.sh",
     "clean:client": "rm -rf build/",
     "dev:client": "cd client && npm start",
-    "dev:server": "nodemon server.js",
+    "dev:server": "npm run load:config nodemon server.js",
     "build:proto": "npm run load:config ./scripts/protogen.sh",
     "build:client": "npm run clean:client && cd client && npm run build && mv build ../build",
-    "start:production": "npm run build:proto && npm run build:client && node server.js"
+    "start:server": "npm run load:config node server.js",
+    "start:production": "npm run build:proto && npm run build:client && npm run start:server"
   },
   "author": "Neil Leeson Syiemlieh",
   "license": "ISC",
