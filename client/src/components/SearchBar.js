@@ -1,7 +1,6 @@
-const React = require('react');
-const { useState } = require('react');
+import React, { useState } from 'react';
 
-const styles = require('./SearchBar.module.css');
+import styles from './SearchBar.module.css';
 
 const SearchBar = ({ onSubmit }) => {
     const [value, setValue] = useState('');
@@ -21,4 +20,4 @@ const SearchBar = ({ onSubmit }) => {
     );
 };
 
-module.exports = SearchBar;
+export default SearchBar;

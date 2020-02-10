@@ -11,5 +11,5 @@ mkdir -p $PROTO_GEN_PATH
 echo "Compiling protobuf definitions"
 protoc helloworld.proto \
   --proto_path=$PROTO_PATH \
-  --js_out=import_style=commonjs:$PROTO_GEN_PATH \
+  --js_out=import_style=commonjs,binary:$PROTO_GEN_PATH \
   --grpc-web_out=import_style=commonjs,mode=grpcwebtext:$PROTO_GEN_PATH
