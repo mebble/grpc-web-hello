@@ -4,8 +4,8 @@ import './App.css';
 
 import SearchBar from './components/SearchBar';
 
-import messages from './.proto-generated/helloworld_pb';
-import grpcClient from './.proto-generated/helloworld_grpc_web_pb';
+import messages from './protogen/helloworld_pb';
+import grpcClient from './protogen/helloworld_grpc_web_pb';
 
 console.log('ONE******');
 console.log(Object.getOwnPropertyNames(messages));
