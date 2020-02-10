@@ -3,7 +3,8 @@ const path = require('path');
 const grpc = require('grpc');
 const protoLoader = require('@grpc/proto-loader');
 
-const protofilePath = path.join(__dirname, process.env.PROTO_PATH, 'helloworld.proto');
+const baseProjectPath = path.join(__dirname, '../');
+const protofilePath = path.join(baseProjectPath, process.env.PROTO_PATH, 'helloworld.proto');
 const PORT = 9090;
 
 const packageDefinition = protoLoader.loadSync(protofilePath, {
