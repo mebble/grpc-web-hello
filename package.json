@@ -15,7 +15,7 @@
     "build:proto": "npm run load:config ./scripts/protogen.sh",
     "build:client": "npm run clean:client && cd client && npm run build && mv build ../build",
     "start:server": "npm run load:config node server/index.js",
-    "start:production": "npm run build:proto && npm run build:client && npm run start:server"
+    "start:production": "npm run build:client && npm run start:server"
   },
   "author": "Neil Leeson Syiemlieh",
   "license": "ISC",
