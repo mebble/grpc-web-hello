@@ -9,6 +9,12 @@ This project started out as a recreation of [grpc-web's hello world example](htt
 - protoc
 - protoc-gen-grpc-web
 
+## Architecture
+
+The architecture of the project is as follows. All the configuration is specified by the configuration files and the bash scripts.
+
+![Architecture](docs/architecture.png)
+
 ## Development
 
 Install dependencies `$ npm run install:dependencies`
