@@ -1,20 +1,9 @@
 import React from 'react';
+import { HelloRequest, HelloReply, GreeterClient } from '@mebble/grpc-hello-client';
 
 import './App.css';
 
 import SearchBar from './components/SearchBar';
-
-import messages from './protogen/helloworld_pb';
-import grpcClient from './protogen/helloworld_grpc_web_pb';
-
-console.log('ONE******');
-console.log(Object.getOwnPropertyNames(messages));
-console.log(messages.HelloReply === grpcClient.HelloReply);
-console.log('TWO******');
-console.log(Object.getOwnPropertyNames(grpcClient));
-
-const { HelloRequest, HelloReply } = messages;
-const { GreeterClient } = grpcClient;
 
 const client = new GreeterClient('http://localhost:8080');  // configuring to make requests to envoy
 
