@@ -1,6 +1,6 @@
 {
   "name": "@mebble/grpc-hello-client",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A wrapper over gRPC client stubs for a hello world program",
   "main": "index.js",
   "scripts": {
