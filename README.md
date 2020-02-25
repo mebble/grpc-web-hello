@@ -1,4 +1,4 @@
-# grpcweb-hello
+# grpc-web-hello
 
 This project started out as a recreation of [grpc-web's hello world example](https://github.com/grpc/grpc-web/tree/master/net/grpc/gateway/examples/helloworld).
 
@@ -21,14 +21,15 @@ Install dependencies `$ npm run install:dependencies`
 
 Start the gRPC server `$ npm run dev:server`
 
-Build and start the envoy proxy from the dockerfile
+Build the docker image and spin up the envoy proxy in a container
 ```
 $ docker build . \
-    -t helloworld/envoy \
+    -t grpc-web-hello:latest \
     -f ./envoy.Dockerfile
-$ docker run -d helloworld/envoy \
+$ docker run -d \
     -p 8080:8080 \
-    -p 9901:9901
+    -p 9901:9901 \
+    grpc-web-hello:latest
 ```
 
 In another terminal, start the gRPC client's development server `$ npm run dev:client`. This will spin up a development server for the client-side code.
@@ -56,5 +57,3 @@ $ npm run start:production
 ```
 $ python3 -m http.server --directory build 5000
 ```
-
-## Design Decisions

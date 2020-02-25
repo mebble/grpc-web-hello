@@ -1,5 +1,5 @@
 {
-  "name": "grpcweb-hello",
+  "name": "grpc-web-hello",
   "version": "1.0.0",
   "description": "Learning grpc-web with react and node",
   "private": true,
